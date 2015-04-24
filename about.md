@@ -10,6 +10,6 @@ Introduction：
 
 My steps:
 
-* [Github](https://github.com/{{site.github_username}}){:target="_blank"}
-* [Codewars](http://www.codewars.com/users/mattycao){:target="_blank"}
+* <a href="https://github.com/{{site.github_username}}" target="_blank">Github</a>
+* <a href="http://www.codewars.com/users/mattycao" target="_blank">Codewars</a>
 * Email: mattycao@gmail.com
