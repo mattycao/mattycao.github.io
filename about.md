@@ -1,19 +1,15 @@
 ---
 layout: page
-title: About Pixyll
+title: About MattyCao
 permalink: /about/
 ---
 
-This Jekyll theme was crafted with <3 by [John Otander](http://johnotander.com)
-([@4lpine](https://twitter.com/4lpine)).
+Introduction：
 
-Checkout the [Github repository](https://github.com/johnotander/pixyll) to download it,
-request a feature, report a bug, or contribute. It's free, and open source
-([MIT](http://opensource.org/licenses/MIT)).
+* Love web Development, focus on the front-end development, recently is learning MEAN.
 
-Thanks to the following:
+My steps:
 
-* [BASSCSS](http://basscss.com)
-* [Jekyll](http://jekyllrb.com)
-* [Refills](http://refills.bourbon.io/)
-* [Solarized](http://ethanschoonover.com/solarized)
+* [Github](https://github.com/{{site.github_username}}){:target="_blank"}
+* [Codewars](http://www.codewars.com/users/mattycao){:target="_blank"}
+* Email: mattycao@gmail.com
