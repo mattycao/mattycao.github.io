@@ -1,10 +1,10 @@
 # Site settings
-title:       Blog
+title:       MattyCao Blog
 email:       mattycao@gmail.com
 author:      Matt Cao
 description: "A road to build the Internet World!"
 baseurl:     ""
-url:         "mattycao.github.io"
+url:         "http://mattycao.github.io/"
 
 # Google analytics
 google_analytics:
@@ -20,7 +20,7 @@ disqus_shortname:
 
 # Social icons
 show_social_icons: false
-github_username:
+github_username:mattycao
 stackoverflow_id:
 twitter_username:
 google_plus_id:
