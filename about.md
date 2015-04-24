@@ -6,7 +6,7 @@ permalink: /about/
 
 Introduction：
 
-* Love web Development, focus on the front-end development, recently is learning MEAN.
+* Loving web Development, focus on the front-end development, recently is learning MEAN.
 
 My steps:
 
