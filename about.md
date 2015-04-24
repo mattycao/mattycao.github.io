@@ -10,6 +10,6 @@ Introduction：
 
 My steps:
 
-- [Github](https://github.com/{{site.github_username}}){:target="\_blank"}
-- [CodeWar](http://www.codewars.com/users/mattycao){:target="\_blank"}
+- [Github](https://github.com/{{site.github_username}})
+- [CodeWar](http://www.codewars.com/users/mattycao)
 - Email: mattycao@gmail.com
