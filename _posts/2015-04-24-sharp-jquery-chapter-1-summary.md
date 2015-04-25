@@ -38,7 +38,7 @@ categories: jquery
         });
 ---
 
-| window.onload | $(document).ready(function(){})
+| window.onload | $(document).ready()
 ---|---|---
 执行时机| 必须等待网页中所有的内容加载完毕后(包括图片)才能执行 | 网页中所有的DOM结构绘制完毕后就执行 可能DOM元素相关联的东西并没有加载完
 编写个数| 不能写多个 | 可以写多个
@@ -48,6 +48,7 @@ categories: jquery
  - 对于同一个对象不超过三个操作，可以直接写成一行。
  - 对于同一个对象的较多操作，建议每行写一个操作
  - 对于多个对象的少量操作，可以每个对象写一行，如果涉及子元素，可以考虑适当的缩进。
+
             $(this).addClass('a')
                 .children('li').show().end()
             .siblings.removeClass('high');
@@ -75,11 +76,13 @@ categories: jquery
 >然后我们就可以随意使用JQuery所提供的相关方法了。
 4. 例子
 5. 解决JQuery和其他库的冲突
+
         JQuery.noConflict(); // 释放$的控制权给其他库，JQuery仍然可以用JQuery来使用JQuery的东西。
         //此外，我们可以自定义一个备用名称来access
         var $j = JQuery.noConflict();
         // it can be a, $a, awesome 等
 6. 如果不想给备用名，而同时使用$符号，我们可以：
+
         //method 1
         JQuery.noConflict();
         JQuery(function($) {
