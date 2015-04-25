@@ -67,13 +67,16 @@ categories: jquery
 2. JQuery对象转成DOM对象
  - `[index]`
  - `get(index)`
->JQuery对象是一个类似数组的对象，可以通过`index`的方法来获得相应的DOM对象：
+JQuery对象是一个类似数组的对象，可以通过`index`的方法来获得相应的DOM对象：
+
             var c = $v[0]; // the dom element
->另一种方法是JQuery本身提供的，通过`get(index)`得到相应的DOM对象；
+另一种方法是JQuery本身提供的，通过`get(index)`得到相应的DOM对象；
+
             var c = $v.get(0);
 3. DOM对象转成JQuery对象
+
         var $v = $(c);
->然后我们就可以随意使用JQuery所提供的相关方法了。
+然后我们就可以随意使用JQuery所提供的相关方法了。
 4. 例子
 5. 解决JQuery和其他库的冲突
 
