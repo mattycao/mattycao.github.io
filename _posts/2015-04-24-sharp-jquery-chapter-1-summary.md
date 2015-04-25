@@ -63,11 +63,11 @@ $(this).addClass('a')
   因此，在JQuery对象中，无法使用DOM对象的任何方法。
 
 ###JQuery对象和DOM对象之间的相互转换
-1. 首先， 我们先约定好获取的对象如果为JQuery对象，那么我们要在变量前面加上$。
+* 首先， 我们先约定好获取的对象如果为JQuery对象，那么我们要在变量前面加上$。
   {% highlight javascript %}
      var $v = $('#id');
   {% endhighlight %}
-2. JQuery对象转成DOM对象
+* JQuery对象转成DOM对象
   - `[index]`
   - `get(index)`
 JQuery对象是一个类似数组的对象，可以通过`index`的方法来获得相应的DOM对象：
@@ -78,19 +78,19 @@ JQuery对象是一个类似数组的对象，可以通过`index`的方法来获�
   {% highlight javascript %}
     var c = $v.get(0);
   {% endhighlight %}
-3. DOM对象转成JQuery对象
+* DOM对象转成JQuery对象
   {% highlight javascript %}
     var $v = $(c);
   {% endhighlight %}
 然后我们就可以随意使用JQuery所提供的相关方法了。
-4. 解决JQuery和其他库的冲突
+* 解决JQuery和其他库的冲突
   {% highlight javascript %}
     JQuery.noConflict(); // 释放$的控制权给其他库，JQuery仍然可以用JQuery来使用JQuery的东西。
     //此外，我们可以自定义一个备用名称来access
     var $j = JQuery.noConflict();
     // it can be a, $a, awesome 等
   {% endhighlight %}
-5. 如果不想给备用名，而同时使用$符号，我们可以：
+* 如果不想给备用名，而同时使用$符号，我们可以：
   {% highlight javascript %}
     //method 1
     JQuery.noConflict();
@@ -107,5 +107,5 @@ JQuery对象是一个类似数组的对象，可以通过`index`的方法来获�
     })(JQuery);
     // outside the scope, the $ will be released
   {% endhighlight %}
-6. JQuery库在其他库之前导入
+* JQuery库在其他库之前导入
   如果JQuery库在其他库之前就导入，那么可以直接使用JQuery来做JQuery一些的工作，而无需调用`JQuery.noConflict()`.
