@@ -67,6 +67,7 @@ $(this).addClass('a')
   {% highlight javascript %}
      var $v = $('#id');
   {% endhighlight %}
+
 * JQuery对象转成DOM对象
   - `[index]`
   - `get(index)`
@@ -78,11 +79,13 @@ JQuery对象是一个类似数组的对象，可以通过`index`的方法来获�
   {% highlight javascript %}
     var c = $v.get(0);
   {% endhighlight %}
+
 * DOM对象转成JQuery对象
   {% highlight javascript %}
     var $v = $(c);
   {% endhighlight %}
 然后我们就可以随意使用JQuery所提供的相关方法了。
+
 * 解决JQuery和其他库的冲突
   {% highlight javascript %}
     JQuery.noConflict(); // 释放$的控制权给其他库，JQuery仍然可以用JQuery来使用JQuery的东西。
@@ -90,6 +93,7 @@ JQuery对象是一个类似数组的对象，可以通过`index`的方法来获�
     var $j = JQuery.noConflict();
     // it can be a, $a, awesome 等
   {% endhighlight %}
+
 * 如果不想给备用名，而同时使用$符号，我们可以：
   {% highlight javascript %}
     //method 1
@@ -107,5 +111,6 @@ JQuery对象是一个类似数组的对象，可以通过`index`的方法来获�
     })(JQuery);
     // outside the scope, the $ will be released
   {% endhighlight %}
+  
 * JQuery库在其他库之前导入
   如果JQuery库在其他库之前就导入，那么可以直接使用JQuery来做JQuery一些的工作，而无需调用`JQuery.noConflict()`.
