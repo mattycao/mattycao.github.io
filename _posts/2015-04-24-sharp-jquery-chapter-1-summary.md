@@ -1,3 +1,11 @@
+---
+layout:     post
+title:      Sharp JQuery Chapter 1 Summary
+date:       2015-04-24 11:02:20
+summary:    Chapter 1 about What is JQuery and what it is used for.
+categories: jquery
+---
+
 ##Chapter1 认识JQuery
 ###JQuery和JS的认识
 1. Javascript的弊端
