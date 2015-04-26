@@ -23,6 +23,7 @@ categories: jquery
 2. JQuery selector
 
   JQuery选择器完全继承了CSS的风格，利用JQuery选择器，可以非常便捷快速的找出特定的DOM元素。然后添加行为，不需要担心浏览器是否支持。JQuery中涉及操作CSS的部分比单纯的CSS功能更加强大，并且有拥有跨浏览器的兼容性。
+
 3. JQuery选择器的优势
   1. 简介的写法： `$('#ID')`
   2. 支持CSS1到CSS3的选择器，而且也提供了独立的选择器。
@@ -37,6 +38,7 @@ categories: jquery
     // 或者我们转化成DOM来判断
     if($('#tt')[0])
   {% endhighlight %}
+
 4. JQuery Selector
   * 基本选择器: by id, class, and tag name
   * 层次选择器: by relationship, like child, descendant, siblings etc.
@@ -151,7 +153,7 @@ selector | details | return | example|
 |`:selected` | 选中所有被选中的选项元素(下拉列表) | a collection | `$('select option:selected')`|
 
 ###5. 表单选择器
-  [表单选择器](1.png)
+  ![表单选择器](../images/1.png)
 
 ###6 选择其中的一些注意事项
 
