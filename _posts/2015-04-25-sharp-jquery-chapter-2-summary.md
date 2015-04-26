@@ -37,7 +37,8 @@ categories: jquery
     // 或者我们转化成DOM来判断
     if($('#tt')[0])
     {% endhighlight %}
-4. JQuery Selector
+
+### JQuery Selector
   * 基本选择器: by id, class, and tag name
   * 层次选择器: by relationship, like child, descendant, siblings etc.
   * 过滤选择器
