@@ -27,7 +27,7 @@ categories: jquery
   * 简介的写法： `$('#ID')`
   * 支持CSS1到CSS3的选择器，而且也提供了独立的选择器。
   * 完善的处理机制
-  {% highlight javascript %}
+    {% highlight javascript %}
     document.getElementById('tt').style.color // here it might have error since we need determine whether the tt id element exists or not.
     $('#tt').css('color', 'red'); // here, JQuery will not send error
     // Notice here: $()获取的元素永远是对象，即使网页上没有此元素，所以我们用JQuery检查某个元素在网页上是否存在时，不能使用以下代码
@@ -36,7 +36,7 @@ categories: jquery
     if($('#tt').length > 0)
     // 或者我们转化成DOM来判断
     if($('#tt')[0])
-  {% endhighlight %}
+    {% endhighlight %}
 4. JQuery Selector
   * 基本选择器: by id, class, and tag name
   * 层次选择器: by relationship, like child, descendant, siblings etc.
