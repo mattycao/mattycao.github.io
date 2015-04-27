@@ -7,7 +7,7 @@ categories: CSS
 ---
 
 [MDN CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started "MDN Getting started with CSS")
----
+
 ## 1. What is CSS?
 Cascading Style Sheet is a language for specifying how documents are presented to users.
 
