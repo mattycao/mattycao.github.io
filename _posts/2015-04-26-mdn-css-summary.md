@@ -112,6 +112,7 @@ B + E | Any E element that is the next sibling of a B element (that is: the next
   3. using like this: `rgb(1,1,1)`, the digital is from 0 to 255.
 
 **CSS properties**:
+
  * `color`: a propety on text
  * `background-color`: it can be set as `transparent` to explicitly remove the color, and revealing the parent element's background. It is the default value.
 
