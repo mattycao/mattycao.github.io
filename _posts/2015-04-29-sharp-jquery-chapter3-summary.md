@@ -22,11 +22,13 @@ DOM Core并不专属JS, 任何一种支持DOM的程序设计语言都可以使�
 #### 3.2.1 查找节点
 我们通过在第二章的JQuery选择器完成。
   * 查找元素节点:
+
     ```javascript
     var #li = $('ul li:eq(1)')
     var li_txt = $li.text();
     ```
   * 查找属性节点:
+
     ```javascript
     var $para = $('p');
     var p_txt = $para.attr('title'); // 如果attr中只有一个参数那么就是读取
@@ -50,12 +52,14 @@ DOM Core并不专属JS, 任何一种支持DOM的程序设计语言都可以使�
     $('ul li:eq(1)').remove();
     ```
     **注意**：当用到`remove()`方法删除后，该节点所包含的所有后代节点将同时被删除。返回值是一个指向已经被删除的节点引用。所以我们可以使用它。
+
     ```javascript
     var $l1 = $('ul li:eq(1)').remove();
     $l1.appendTo('ul');
     $('ul li').remove('li[title!="apple"]'); // remove中可以传参数
     ```
     删除中还有`detach()`方法：但是这个方法不会把匹配的元素从JQuery对象中删除，因而可以在将来在使用这些匹配的元素。与`remove()`不同的是，所有绑定的时间和附件的数据等都会保留下来。
+
     ```javascript
     $('ul li').click(function() ){
         alert($(this).html());
@@ -123,13 +127,13 @@ DOM Core并不专属JS, 任何一种支持DOM的程序设计语言都可以使�
   $('p').css({'color': 'red', 'font-size':'14px'});  // 多重的css样式
   ```
   **Notice**：
+
   * 如果值是数字，那么自动转换成像素值。
   * css方法中，如果属性中有`-`符号，如果不带引号，我们要改成驼峰写法，例如`fontSize`。如果加了引号，两种方法都可以的。
   * 对于`opacity`的属性，JQuery已经做了兼容性的解决。
-* height()返回获取元素的高度值px。如果用height设置的时候如果不是px值我们要传入字符串,例如`height('10em')`。**注意**：css方法获取的高度值和样式的设置有关，可能会得到`auto`等字符串，但是`height()`方法获取的高度值是元素在页面中的实际高度，与样式无关，并且不带单位，因为就是`px`。
-* `width()`与`height()`的使用方法类似
-* 关于元素定位的方法：
+  * height()返回获取元素的高度值px。如果用height设置的时候如果不是px值我们要传入字符串,例如`height('10em')`。**注意**：css方法获取的高度值和样式的设置有关，可能会得到`auto`等字符串，但是`height()`方法获取的高度值是元素在页面中的实际高度，与样式无关，并且不带单位，因为就是`px`。
+  * `width()`与`height()`的使用方法类似
+  * 关于元素定位的方法：
   * `offset()`: 获取元素当前视窗的相对偏移，返回两个属性，`top`和`left`，只是对可见元素有效果。
   * `position()`: 获取元素相对一个最近的`position`样式属性为`relative/absolute`的祖父节点的相对偏移，也是返回两个属性。
-  * `scrollTop(), scrollLeft()`: 获取元素的滚动条距离顶端的距离和左测的距离。我们也可以写入数字来设置距离。
-
+  * `scrollTop(), scrollLeft()`: 获取元素的滚动条距离顶端的距离和左测的距离。我们也可以写入数字来设置距离
