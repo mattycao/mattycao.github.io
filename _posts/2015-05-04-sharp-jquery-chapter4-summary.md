@@ -65,20 +65,20 @@ JQuery提供了事件的简写，`$(element).click`
 ```
 * 停止事件冒泡：`event.stopPropagation()` 停止事件冒泡，也做了兼容性的处理。
 * 阻止默认行为：`event.preventDefault()`阻止元素的默认行为，比如提交。
-* 如果相同时对事件对象停止冒泡和默认行为，可以在事件处理函数中返回false。
+* 如果相同时对事件对象停止冒泡和默认行为，可以在事件处理函数中返回`false`。
 
 JQuery不支持事件捕获，所以要想使用捕获，那么需要使用原生的JS。
 
 #### 4.1.5 事件对象属性
 这个都是JQuery对事件对象的常用属性的封装，所以要与原生的区分开：
-* event.type: 获取事件的类型
-* event.preventDefault()
-* event.stopPropagation()
-* event.target: 获取到出发事件的元素，注意这里是元素，而不是JQuery对象，所以获取后可以通过JS属性来获取相关的属性。
-* event.relatedTarget: JQuery对IE做了兼容性的处理
-* event.pageX/event.pageY: 也做了兼容性处理，获取的是相对与页面的x坐标和y坐标
-* event.which: 获取鼠标点击中获取到的鼠标的左中右键(`e.which == 1, 2, 3`)
-* event.mateKey: boolean value， 说明当时事件是否点击了ctrl键( 进行了封装)
+* `event.type`: 获取事件的类型
+* `event.preventDefault()`
+* `event.stopPropagation()`
+* `event.target`: 获取到出发事件的元素，注意这里是元素，而不是JQuery对象，所以获取后可以通过JS属性来获取相关的属性。
+* `event.relatedTarget`: JQuery对IE做了兼容性的处理
+* `event.pageX/event.pageY`: 也做了兼容性处理，获取的是相对与页面的x坐标和y坐标
+* `event.which`: 获取鼠标点击中获取到的鼠标的左中右键(`e.which == 1, 2, 3`)或者按键值
+* `event.mateKey`: `boolean value`， 说明当时事件是否点击了`ctrl`键( 进行了封装)
 
 #### 4.1.6 移除事件
 * 移除按钮元素上以前注册的事件
@@ -88,7 +88,7 @@ JQuery不支持事件捕获，所以要想使用捕获，那么需要使用原�
     $('a').unbind('click'); // delete the click event
     $('a').unbind('click', fn1); // delete the fn1 in the click event
 ```
-* 对于只需要触发一次，随后就要立即解除绑定的情况，JQuery提供了一种简单的写法，one()方法。这个绑定在运行一次后会立即删除。用法和bind一样。
+* 对于只需要触发一次，随后就要立即解除绑定的情况，JQuery提供了一种简单的写法，`one()`方法。这个绑定在运行一次后会立即删除。用法和`bind`一样。
 
 #### 4.1.7 模拟操作
 * 常用模拟: `trigger(type, [data])`， data为传入的数据，必须为数组。
@@ -134,15 +134,15 @@ JQuery不支持事件捕获，所以要想使用捕获，那么需要使用原�
 
 ### 4.2 JQuery中的动画
 #### 4.2.1 show()和hide()方法
-* hide(): 这个方法相当于把css中的display属性改成none，但是在修改之前，会把当前的display属性记住，类似block, inline等属性，等留作show()使用
-* show(): 相当于修改成恢复hide之前的display属性值。
-* 这两个函数可以传入字符串或者数字为参数，字符串的参数有`slow(0.6s), normal(0.4s), fast(0.2s)`， 还可以传入数字，表示多少微秒，这样子可以产生动画效果，这个效果是在元素的高度，宽度，不透明度同时变化，应该是用到了jquery中的animate函数。
+* `hide()`: 这个方法相当于把css中的`display`属性改成`none`，但是在修改之前，会把当前的`display`属性记住，类似`block`, `inline`等属性，等留作`show()`使用
+* `show()`: 相当于修改成恢复`hide`之前的`display`属性值。
+* 这两个函数可以传入字符串或者数字为参数，字符串的参数有`slow(0.6s), normal(0.4s), fast(0.2s)`， 还可以传入数字，表示多少微秒，这样子可以产生动画效果，这个效果是在元素的高度，宽度，不透明度同时变化，应该是用到了jquery中的`animate`函数。
 
 #### 4.2.2 fadeIn()和fadeOut()方法
-只改变不透明度，直到元素的display为none。
+只改变不透明度，直到元素的`display`为`none`。
 
 #### 4.2.3 slideUp()和slideDown()方法
-只改变高度，直到元素的display为none。
+只改变高度，直到元素的`display`为`none`。
 
 #### 4.2.4 自定义动画aminate()
 `animate(params, speed, callback);`
@@ -173,13 +173,13 @@ JQuery不支持事件捕获，所以要想使用捕获，那么需要使用原�
 ```
 
 #### 4.2.6 停止动画和判断是否处于动画的状态
-* 停止动画: `stop([clearQueue], [gotoEnd]);`, 两个参数都是boolean值，第一个代表是否要清空未执行的动画队列， 第二个参数代表是否直接将正在执行的动画跳转到末状态。**Notice**： 正在执行的动画
+* 停止动画: `stop([clearQueue], [gotoEnd]);`, 两个参数都是`boolean`值，第一个代表是否要清空未执行的动画队列， 第二个参数代表是否直接将正在执行的动画跳转到末状态。**Notice**： 正在执行的动画
 
 ```javascript
     $(this).stop(true).anmiate({height: '22'}, 100).anmiate({left: '23'}， 110);
 ```
 * 判断是否处于动画状态:
-使用animate()需要避免动画积累而导致动画与用户的行为不一致，所以要判断是否处于动画状态
+使用`animate()`需要避免动画积累而导致动画与用户的行为不一致，所以要判断是否处于动画状态
 
 ```javascript
     if(!$(this).is(':animated')) {
