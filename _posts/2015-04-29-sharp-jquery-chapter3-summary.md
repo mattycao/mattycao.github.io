@@ -2,7 +2,7 @@
 layout:     post
 title:      Sharp JQuery Chapter 3 Summary
 date:       2015-04-29 21:18:00
-summary:    Chapter 2 about JQuery DOM manipulation!
+summary:    Chapter 3 about JQuery DOM manipulation!
 categories: jquery
 ---
 
