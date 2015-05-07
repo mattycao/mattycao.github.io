@@ -87,4 +87,5 @@ Get请求和Post请求的区别：
 * 有些方法是全局方法，不管创建他们的代码位于何处，只要AJAX请求发生时，就会触发他们。
 * 可以通过设置`ajax`中的`option`中的`global`的`boolean`值来处理是否触发AJAX事件
 
+
 ![AJAX流程](http://mattycao.github.io/images/jquery-chapter6-5.png)
