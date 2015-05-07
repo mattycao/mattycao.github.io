@@ -22,7 +22,9 @@ categories: jquery
 
 ### 6.2 JQuery中的AJAX
 #### 6.2.1 load()方法
+
 `load(url [, data] [, callback]);`
+
 * `load()`方法是内部方法，所以JQuery对象可以操作
 * `url`参数是`string`，里面的语法是 ` url selector`, 比如我们要载入`html`文件，可以加入`selector`来筛选`html`文档。
 * 传递方式，如果我们没有传入`data Object`参数，那么我们用的就是`get`方法，如果添加了那么我们用的就是`post`方法。
@@ -36,6 +38,7 @@ categories: jquery
 
 ![$.get()方法参数1](http://mattycao.github.io/images/jquery-chapter6-1.png)
 ![$.get()方法参数2](http://mattycao.github.io/images/jquery-chapter6-2.png)
+
 * 其中的回调函数有两个参数，data和textStatus, textStatus和load中的一样，而且只有当数据成功返回success后才会被调用，这点与load()方法不一样。
 
 ##### 6.2.2.2 $.post()
@@ -83,4 +86,5 @@ Get请求和Post请求的区别：
 #### 6.4 JQuery中的全局事件
 * 有些方法是全局方法，不管创建他们的代码位于何处，只要AJAX请求发生时，就会触发他们。
 * 可以通过设置`ajax`中的`option`中的`global`的`boolean`值来处理是否触发AJAX事件
+
 ![AJAX流程](http://mattycao.github.io/images/jquery-chapter6-5.png)
