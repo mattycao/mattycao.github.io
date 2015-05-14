@@ -11,7 +11,7 @@ categories: Node
 ### 1 How to setup in express?
 > Notice, we here use the Express.js 4.
 
-Be default, Express will require() the engine based on the file extension. For example jade, Express incokes the following inernall, and caches the require() on subsequent calls to increase performance.
+Be default, Express will require the engine based on the file extension. For example `jade`, Express incokes the following inernall, and caches the `require()` on subsequent calls to increase performance.
 
 ```javascript
 app.engine('jade', require('jade').__express);
@@ -28,6 +28,7 @@ app.set('view engine', 'hbs');
 
 // must set the view engine to html, since express set the jade as default engine
 app.set('view engine', 'html');
+// here, we use the hbs package, there are still lots of other package to use, like handlebars, express-handlebars
 app.engine('html', require('hbs').__express);
 ```
 ### 2 Handlebars Syntax
@@ -37,7 +38,7 @@ The handlebars is a template engine, which inherits from Mustache.
 `{{title}}`
 
 #### Iteration(each)
-each is one of the built-in helpers, it allows you to iterate through objects and arrays. Inside the block, we use the `@key` for the former(objects), and the `@index` for the later(arrays). In addition, each item is referred to as `this`. When an item is an object itself, `this` can be omitted and just the property name is used to reference the value of that property.
+`each` is one of the built-in helpers, it allows you to iterate through objects and arrays. Inside the block, we use the `@key` for the former(objects), and the `@index` for the later(arrays). In addition, each item is referred to as `this`. When an item is an object itself, `this` can be omitted and just the property name is used to reference the value of that property.
 
 ```html
 <div>
@@ -80,7 +81,7 @@ In case there's an object with nested properties, use the `with` can solve this 
 {{/with}}
 ```
 #### Comments
-To output comments, just use the regular html <!-- -->. To hide comments in the final output, use {{! }} or {{!-- --}}.
+To output comments, just use the regular html `<!-- -->`. To hide comments in the final output, use `{{! }}` or `{{!-- --}}`.
 
 #### Cusomer helper
 Customer Handlebars helps are similar to built-in helper blocks and jade mixins. To use customer helpers, we need to create them as a javascript function and register them with the handlebars instance.
@@ -158,10 +159,17 @@ The data:
 ```
 Notice here when inside the tours object, the context has changed to be the tours, so if you want to access the currency property, we need use `../currency`.
 
-For summary, each helper in handlebars will change  the context. For if block, it will create a new context which is a copy of the parent context. That is to say, in if/else block, the new context will be the same with it previous context( parent context). However, if there is a `if` in the `each`, we need use the `../../.` to access the currency like the example. So be careful, it is complicated, so we would better not use `if` in `each` block. `{{.}}` refers to the current context.
+Each helper in handlebars will change  the context. For `if` block, it will create a new context which is a copy of the parent context. That is to say, in `if/else` block, the new context will be the same with it previous context( parent context). However, if there is a `if` in the `each`, we need use the `../../.` to access the currency in the example. So be careful, it is complicated, so we would better not use `if` in `each` block.
+
+`{{.}}` refers to the current context.
 
 #### Includes(Partials)
 Includes or partials templates in Handlebars are interpreted by the `{{>partial_name}}` expression. Partials are akin to helpers and are registered with `Handlebars.registerPartial(name, source)`, where name is a string and source is a Handlebars template code for the partial.
+
+```javascript
+var hbs = require('hbs');
+hbs.registerPartials(__dirname + '/views/partials'); // access the partial files in the partials folder
+```
 
 ### 3 StandAlone Handlebar Usage
 [Pratical NodeJS Chapter4](https://github.com/azat-co/practicalnode/tree/master/ch4)
@@ -191,7 +199,7 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 ```
-Unlike the ejs, when we use the `title` to access it not the `locals.title`
+Unlike the ejs, we use the `title` to access it not the `locals.title`
 
 ```html
 <div>
