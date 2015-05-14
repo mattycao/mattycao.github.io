@@ -214,7 +214,7 @@ If we pass nothing, and the views folder has a file called layout.html, then it 
 
 ```javascript
 router.get('/', function(req, res, next) {
-    res.locals.title = 'express';
+  res.locals.title = 'express';
   res.render('index'); // will use the layout.html as the layout
   //res.render('index', {layout: null}); // set the layout to null
 });
@@ -223,7 +223,7 @@ router.get('/', function(req, res, next) {
 
 ```javascript
 router.get('/', function(req, res, next) {
-    res.locals.title = 'express';
+  res.locals.title = 'express';
   res.render('index', {layout: 'main', title: 'express'}); // will use the layout.html as the layout
 });
 ```
