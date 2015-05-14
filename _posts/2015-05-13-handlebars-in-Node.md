@@ -40,11 +40,11 @@ The handlebars is a template engine, which inherits from Mustache.
 #### Iteration(each)
 `each` is one of the built-in helpers, it allows you to iterate through objects and arrays. Inside the block, we use the `@key` for the former(objects), and the `@index` for the later(arrays). In addition, each item is referred to as `this`. When an item is an object itself, `this` can be omitted and just the property name is used to reference the value of that property.
 
-```handlebars
+```html
 <div>
-    {{#each languages}}
-    <p>{{@index}}. {{this}}</p>
-    {{/each}}
+    \{\{#each languages}}
+    <p>\{\{@index}}. \{\{this}}</p>
+    \{{/each}}
 </div>
 {language: ['a', 'b', 'c']}
 ```
