@@ -195,7 +195,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 ```javascript
 router.get('/', function(req, res, next) {
-    res.locals.title = 'express';
+  res.locals.title = 'express';
   res.render('index');
 });
 ```
