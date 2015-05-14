@@ -44,7 +44,7 @@ The handlebars is a template engine, which inherits from Mustache.
 <div>
     \{\{#each languages}}
     <p>\{\{@index}}. \{\{this}}</p>
-    \{{/each}}
+    \{\{/each}}
 </div>
 {language: ['a', 'b', 'c']}
 ```
@@ -54,31 +54,31 @@ By default, handlebars escapes values. If you don't want it to escape a value, u
 #### Conditions(if)
 if is another built-in helper invoked via #.
 
-```javascript
-{{#if user.admin}}
+```html
+\{\{#if user.admin}}
   <button class='lanch'>Lanch</button>
-  {{else}}
+  \{\{else}}
   <button class='login'>Login</button>
-  {{/if}}
+  \{\{/if}}
 ```
 #### Unless
 Equal to if not. An another helper.
 
-```javascript
-{{#unless user.admin}}
-{{else}}
-{{/unless}}
+```html
+\{\{#unless user.admin}}
+\{\{else}}
+\{\{/unless}}
 ```
 #### With
 In case there's an object with nested properties, use the `with` can solve this problem.
 
-```javascript
-{{#with user}}
-  <p>{{name}}</p>
-    {{#with contact}}
-      <span>Twitter: @{{twitter}}</span>
-    {{/with}}
-{{/with}}
+```html
+\{\{#with user}}
+  <p>\{\{name}}</p>
+    \{\{#with contact}}
+      <span>Twitter: @\{\{twitter}}</span>
+    \{\{/with}}
+\{\{/with}}
 ```
 #### Comments
 To output comments, just use the regular html `<!-- -->`. To hide comments in the final output, use `{{! }}` or `{{!-- --}}`.
@@ -114,33 +114,33 @@ Handlebars.registerHelper('table', function(data) {
 #### Block
 The context is changing. Like this:
 
-```javascript
+```html
 <ul>
-    {{#each tours}}
-        {{! I'm in a new block...and the context has changed }}
+    \{\{#each tours}}
+        \{\{! I'm in a new block...and the context has changed }}
         <li>
-            {{name}} - {{price}}
-            {{#if ../currencies}}
-                ({{../../currency.abbrev}})
-            {{/if}}
+            \{\{name}} - \{\{price}}
+            \{\{#if ../currencies}}
+                (\{\{../../currency.abbrev}})
+            \{\{/if}}
         </li>
-    {{/each}}
+    \{\{/each}}
 </ul>
-{{#unless currencies}}
-    <p>All prices in {{currency.name}}.</p>
-{{/unless}}
-{{#if specialsUrl}}
-    {{! I'm in a new block...but the context hasn't changed (sortof) }}
+\{\{#unless currencies}}
+    <p>All prices in \{\{currency.name}}.</p>
+\{\{/unless}}
+\{\{#if specialsUrl}}
+    \{\{! I'm in a new block...but the context hasn't changed (sortof) }}
     <p>Check out our <a href="{{specialsUrl}}">specials!</p>
-{{else}}
+\{\{else}}
     <p>Please check back often for specials.</p>
-{{/if}}
+\{\{/if}}
 <p>
-    {{#each currencies}}
-        <a href="#" class="currency">{{.}}</a>
-    {{else}}
-        Unfortunately, we currently only accept {{currency.name}}.
-    {{/each}}
+    \{\{#each currencies}}
+        <a href="#" class="currency">\{\{.}}</a>
+    \{\{else}}
+        Unfortunately, we currently only accept \{\{currency.name}}.
+    \{\{/each}}
 </p>
 
 The data:
@@ -161,7 +161,7 @@ Notice here when inside the tours object, the context has changed to be the tour
 
 Each helper in handlebars will change  the context. For `if` block, it will create a new context which is a copy of the parent context. That is to say, in `if/else` block, the new context will be the same with it previous context( parent context). However, if there is a `if` in the `each`, we need use the `../../.` to access the currency in the example. So be careful, it is complicated, so we would better not use `if` in `each` block.
 
-{{.}} refers to the current context.
+\{\{.}} refers to the current context.
 
 #### Includes(Partials)
 Includes or partials templates in Handlebars are interpreted by the `{{>partial_name}}` expression. Partials are akin to helpers and are registered with `Handlebars.registerPartial(name, source)`, where name is a string and source is a Handlebars template code for the partial.
@@ -184,11 +184,11 @@ app.engine('html', require('hbs').__express);
 var hbs = require('hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 ```
-```
+```html
 <div>
     <p>This is example</p>
-    {{title}}
-    {{> part1}} <!-- refer to the part1.html in partials folder -->
+    \{\{title}}
+    \{\{> part1}} <!-- refer to the part1.html in partials folder -->
 </div>
 ```
 * Using the data
@@ -201,11 +201,11 @@ router.get('/', function(req, res, next) {
 ```
 Unlike the ejs, we use the `title` to access it not the `locals.title`
 
-```javascript
+```html
 <div>
     <p>This is example</p>
-    {{title}}
-    {{> part1}} <!-- refer to the part1.html in partials folder -->
+    \{\{title}}
+    \{\{> part1}} <!-- refer to the part1.html in partials folder -->
 </div>
 ```
 * Using the layout
