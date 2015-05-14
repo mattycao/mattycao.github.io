@@ -35,14 +35,14 @@ app.engine('html', require('hbs').__express);
 The handlebars is a template engine, which inherits from Mustache.
 
 #### Variables
-```
+```javascript
 {{title}}
 ```
 
 #### Iteration(each)
 `each` is one of the built-in helpers, it allows you to iterate through objects and arrays. Inside the block, we use the `@key` for the former(objects), and the `@index` for the later(arrays). In addition, each item is referred to as `this`. When an item is an object itself, `this` can be omitted and just the property name is used to reference the value of that property.
 
-```
+```javascript
 <div>
     {{#each languages}}
     <p>{{@index}}. {{this}}</p>
@@ -56,7 +56,7 @@ By default, handlebars escapes values. If you don't want it to escape a value, u
 #### Conditions(if)
 if is another built-in helper invoked via #.
 
-```
+```javascript
 {{#if user.admin}}
   <button class='lanch'>Lanch</button>
   {{else}}
@@ -66,7 +66,7 @@ if is another built-in helper invoked via #.
 #### Unless
 Equal to if not. An another helper.
 
-```
+```javascript
 {{#unless user.admin}}
 {{else}}
 {{/unless}}
@@ -74,7 +74,7 @@ Equal to if not. An another helper.
 #### With
 In case there's an object with nested properties, use the `with` can solve this problem.
 
-```
+```javascript
 {{#with user}}
   <p>{{name}}</p>
     {{#with contact}}
@@ -85,7 +85,7 @@ In case there's an object with nested properties, use the `with` can solve this 
 #### Comments
 To output comments, just use the regular html `<!-- -->`. To hide comments in the final output, use `{{! }}` or `{{!-- --}}`.
 
-#### Cusomer helper
+#### Customer helper
 Customer Handlebars helps are similar to built-in helper blocks and jade mixins. To use customer helpers, we need to create them as a javascript function and register them with the handlebars instance.
 
 ```javascript
@@ -116,7 +116,7 @@ Handlebars.registerHelper('table', function(data) {
 #### Block
 The context is changing. Like this:
 
-```
+```javascript
 <ul>
     {{#each tours}}
         {{! I'm in a new block...and the context has changed }}
@@ -203,7 +203,7 @@ router.get('/', function(req, res, next) {
 ```
 Unlike the ejs, we use the `title` to access it not the `locals.title`
 
-```
+```javascript
 <div>
     <p>This is example</p>
     {{title}}
