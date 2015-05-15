@@ -3,6 +3,7 @@ layout:     post
 title:      How to write Middleware for Express.js App
 date:       2015-05-14 23:27:00
 summary:    The details and some pitfalls of writeMiddleware for express.js application
+categories: Node
 ---
 
 ## How to write Middleware for Express.js App
@@ -253,5 +254,5 @@ Otherwise, check out Node Inspector and go down the step-by-step debugging path.
 ### So Much Middleware, So Little Time!
 I’ll wrap this article with this advice: there’s a lot of middleware out there! Start browsing NPM for great node.js middleware! If you want some inspiration, here are some we love:
 
-* Morgan is a fully-featured logger for Express.js. It does much more than our trivial example!
-* Helmet is a collection of smaller modules, culminating in a one-stop-shop for securing your web application. You should install this one right now.
+* **Morgan** is a fully-featured logger for Express.js. It does much more than our trivial example!
+* **Helmet** is a collection of smaller modules, culminating in a one-stop-shop for securing your web application. You should install this one right now.
