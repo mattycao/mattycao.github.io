@@ -52,4 +52,4 @@ Function declarations are hoisted to the top of the context.
 8. The ways to changing this: 
     1. the call() method, the first one is new this. Then give the parameters as one by one. The call method is the method of a function.
     2. apply, only two parameters.
-    3. bind, which is introduced in ECMAscript5. Notice attaching a method to an object doesn't change 'this'.
+    3. bind, which is introduced in ECMAScript5. Notice attaching a method to an object doesn't change 'this'.
