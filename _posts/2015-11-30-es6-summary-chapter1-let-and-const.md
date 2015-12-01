@@ -6,7 +6,7 @@ summary:    about the let and const keyword
 categories: Javascript
 ---
 
-## ES summary Chapter 1: about let and const keyword
+## ES6 summary Chapter 1: about let and const keyword
 
 ### let
 1. `let` keyword is used for declaring variable, but it has block scope. If it is outside, then it will suffer the ReferenceError. 
