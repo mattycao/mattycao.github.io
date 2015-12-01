@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      ES6 Summary: about let and const
-date:       2015-11-30 23:05:00
-summary:    ES6 about let and const keyword
+title:      ES6: about let and const keyword
+date:       2015-06-23 11:52:00
+summary:    about the let and const keyword
 categories: Javascript
 ---
 
@@ -29,6 +29,7 @@ f();
 ```
 For this situation, if under ES5, we will get 'I am outside!', if under es6, we will get 'I am inside!'.
 5. The `let` will not hoist the variable like `var` keyword.
+
 ### const
 1. If declared by using const, we will never change the value again.
 2. If we declare the value again, we will not get an error, the system will just ignore it.
