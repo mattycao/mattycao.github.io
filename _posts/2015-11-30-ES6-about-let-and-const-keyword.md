@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      ES6 about let and const keyword
-date:       2015-06-23 11:52:00
+date:       2015-11-30 23:05:00
 summary:    about the let and const keyword
 categories: Javascript
 ---

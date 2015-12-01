@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Principles of Object Oriented JavaScript about types and functions
-date:       2015-06-23 11:52:00
-summary:    Principles_of_Object_Oriented_JavaScript Part1
+date:       2015-11-28 10:06:00
+summary:    Principles of Object Oriented JavaScript Part1
 categories: Javascript
 ---
 
