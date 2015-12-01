@@ -7,6 +7,7 @@ categories: Javascript
 ---
 
 ## ES6 Summary:
+
 ### Chapter 1: about let and const keyword
 #### let
 1. `let` keyword is used for declaring variable, but it has block scope. If it is outside, then it will suffer the ReferenceError. 
@@ -15,7 +16,8 @@ categories: Javascript
     1. we will no longer use the IIFE to build a block scope.
     2. we will no longer use the closure to build a block scope.
 4. **Notice**:  
-In ES6, the scope of a function is also inside its block scope.  
+In ES6, the scope of a function is also inside its block scope.
+  
 ```js
 function f() { console.log('I am outside!');
 ;(function() {
