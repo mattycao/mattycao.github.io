@@ -15,6 +15,7 @@ categories: Javascript
 
 ### Prototypes
 1. Every function(with the exception of some built-in functions) has a `prototype` property that is used during the creation of new instances.
+
 ```js
 // a way to identify a prototype property
 function hasPrototypeProperty(object, name) {
@@ -25,6 +26,7 @@ function hasPrototypeProperty(object, name) {
 3. You can read the value of the `[[Prototype]]` property by using the `Object.getPrototypeOf()` method on an object. 
 4. **Notice**: Some JavaScript engines also support a property called `_proto_`on all objects. This property allows you to both read from and write to the `[[Prototype]]` property. Firefox, Safari, Chrome, and Node.js all support this property, and `_proto_` is on the path for standardization in ECMAScript 6.
 5. `isPrototypeOf`:
+
 ```js
 var object = {};
 console.log(Object.prototype.isPrototypeOf(object);
@@ -32,6 +34,7 @@ console.log(Object.prototype.isPrototypeOf(object);
 6. **Notice**:   
 Keep in mind that you can’t delete a prototype property from an instance because the delete operator acts only on own properties. You cannot assign a value to a prototype property from an instance.
 7. Using Prototypes with constructor: the constructor property exists on the prototype, so when we create an object, we can do it like this way: 
+
 ```js
 function Person(name) {
     this.name = name;
