@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Principles of Object Oriented JavaScript about Constructor and Prototype.md
+title:      Principles of Object Oriented JavaScript about Constructor and Prototype
 date:       2015-12-06 20:50:00
 summary:    Principles of Object Oriented JavaScript Part3
 categories: Javascript
