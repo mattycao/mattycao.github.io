@@ -9,6 +9,7 @@ categories: Javascript
 ### Chapter 6 Object patterns
 1. Private and privilege members: prefix properties with an underscore, which means it is private.
 2. the module pattern: object creation pattern designed to create singleton object with private data. using the Immediately invoked function expression. It is called privilieged methods:
+
 ```js
 var yourObject = (function() {
 // private data variables
@@ -45,6 +46,7 @@ return {
 ```
 The last one is preferred, it is also called revealing module pattern.
 3. Private members for constructors: define a private property in the constructor:
+
 ```js
 function Person(name) {
 // define a variable only accessible inside of the Person constructor
@@ -66,6 +68,7 @@ person.growOlder();
 console.log(person.getAge()); // 26
 ```
 4. If we want share the variable in all instances, then we can define it like this way:
+
 ```js
 var Person = (function() {
 // everyone shares the same age
@@ -92,6 +95,7 @@ console.log(person1.getAge()); // 26
 console.log(person2.getAge()); // 26
 ```
 5. mixins: One thing to keep in mind about using mixins in this way is that accessor properties on the supplier become data properties on the receiver, which means you can overwrite them if you’re not careful：
+
 ```js
 function mixin(receiver, supplier) {
 for (var property in supplier) {
@@ -113,6 +117,7 @@ return receiver;
 **Notice**:   
 Keep in mind that `Object.keys()` returns only enumerable properties. If you want to also copy over none-numerable properties, use `Object.getOwnPropertyNames()` instead.
 6. Scope-safe constructors: Keep in mind that this code is running in non-strict mode, as leaving out new would throw an error in strict mode. Many built-in constructors, such as Array and RegExp, also work without new because they are written to be scope safe. A scope-safe constructor can be called with or without new and returns the same type of object in either case
+
 ```js
 function Person(name) {
 if (this instanceof Person) {

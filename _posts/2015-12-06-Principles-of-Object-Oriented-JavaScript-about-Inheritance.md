@@ -13,6 +13,7 @@ categories: Javascript
 4. `toString()`, is called as fallback whenever `valueOf()` returns a reference value instead of a primitive value. It is also implicitly called on primitive values whenever js is expecting a string. 
 5. Modifying `Object.prototype`, totally forbidden
 6. Object inheritance: We can specify `[[Prototype]]` with the Object.create() method.
+
 ```js
 var book = {
     title: "The Principles of Object-Oriented JavaScript"
@@ -29,6 +30,7 @@ writable: true
 ```
 We can also set the first parameters to be null.
 7. Constructor Inheritance: based on that every function has a `prototype` property that can be modified or replaced. 
+
 ```js
 function YourConstructor() {
 // initialization
@@ -49,6 +51,7 @@ Square.prototype = new Rectangle();
 Square.prototype.constructor = Square;
 ```
 9. This the same as it show before:
+
 ```js
 // inherits from Rectangle
 function Square(size) {
